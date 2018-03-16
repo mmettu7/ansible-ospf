@@ -1,0 +1,6 @@
+---
+# tasks file for interfaces
+- name: configuration router interfaces
+  ios_config:
+    provider: "{{ connector }}"
+    src: interfaces.j2

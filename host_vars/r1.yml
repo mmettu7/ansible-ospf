@@ -1,0 +1,19 @@
+hostname: r1
+
+interfaces:
+  0/0:
+    alias: connection to r2
+    address: 172.16.0.1
+    netmask: 255.255.255.0
+
+  0/1:
+    alias: local network
+    address: 10.0.1.1
+    netmask: 255.255.255.0
+
+ospf:
+  id: 1
+  router_id: 10.10.10.1
+  networks:
+    - {network: 10.0.1.0, netmask: 0.0.0.255, area: 0}
+    - {network: 172.16.0.0, netmask: 0.0.0.255, area: 0}

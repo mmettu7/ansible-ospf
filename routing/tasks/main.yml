@@ -1,0 +1,6 @@
+---
+# tasks file for routing
+- name: apply ospf policy
+  ios_config:
+    provider: "{{ connector }}"
+    src: routing.j2

@@ -1,0 +1,14 @@
+---
+- hosts: ospf_router
+  gather_facts: false
+  connection: local
+
+  tasks:
+  - name: gathering ospf database
+    register: result
+    ios_command:
+      provider: "{{ connector }}"
+      commands: "show ip ospf database"
+
+  - name: show ospf database
+    debug: msg="{{ result.stdout_lines }}"

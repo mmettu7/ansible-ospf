@@ -1,0 +1,6 @@
+connector:
+  host: "{{ inventory_hostname }}"
+  username: ansible
+  password: ans1ble
+  auth_pass: ans1bl3
+  authorize: yes
